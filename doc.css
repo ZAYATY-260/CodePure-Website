@@ -1,0 +1,69 @@
+/* Sidebar (Get Started, Configuration, etc.) */
+.doc__nav {
+    position: sticky;    /* Makes the sidebar sticky */
+    top: 20px;           /* It will stick 20px below the top of the viewport */
+    min-width: 200px;    /* Fixed width for the sidebar */
+    height: max-content; /* Ensure it doesn't take unnecessary height */
+  }
+  
+  .doc__nav ul {
+    list-style-type: none;  /* Remove bullets */
+    padding-left: 0;        /* Align with the sidebar */
+  }
+  
+  .doc__nav li {
+    padding: 10px 15px;     /* Space around the list items */
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-left: 4px solid transparent;  /* Style for selection */
+    transition: background-color 0.3s ease;
+  }
+  
+  .doc__nav li:hover {
+    background-color: #e1e1e1;  /* Hover effect */
+  }
+  
+  .doc__nav li.selected {
+    border-left-color: green;   /* Highlight the selected item */
+    background-color: #f1f1f1;
+  }
+  
+  /* Ensure the Navbar is still horizontal */
+  nav ul.menu {
+    display: flex;                 /* Maintain the horizontal layout */
+    justify-content: flex-end;     /* Right-align */
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul.menu li {
+    margin-right: 20px;            /* Spacing between menu items */
+  }
+  
+  nav ul.menu li a {
+    text-decoration: none;
+    color: #333;                   /* Link color */
+    font-weight: bold;
+  }
+  
+  nav ul.menu li a:hover {
+    color: #000;                   /* Hover color */
+  }
+  
+  nav ul.menu li i {
+    margin-right: 8px;             /* Spacing between icon and text */
+  }
+  
+  /* Optional: Adjust wrapper for responsive layout */
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .doc__content {
+    flex-grow: 1;
+  }
+  
