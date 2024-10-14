@@ -1,69 +1,140 @@
 /* Sidebar (Get Started, Configuration, etc.) */
 .doc__nav {
-    position: sticky;    /* Makes the sidebar sticky */
-    top: 20px;           /* It will stick 20px below the top of the viewport */
-    min-width: 200px;    /* Fixed width for the sidebar */
-    height: max-content; /* Ensure it doesn't take unnecessary height */
-  }
-  
-  .doc__nav ul {
-    list-style-type: none;  /* Remove bullets */
-    padding-left: 0;        /* Align with the sidebar */
-  }
-  
-  .doc__nav li {
-    padding: 10px 15px;     /* Space around the list items */
-    cursor: pointer;
-    background-color: #f9f9f9;
-    border-left: 4px solid transparent;  /* Style for selection */
-    transition: background-color 0.3s ease;
-  }
-  
-  .doc__nav li:hover {
-    background-color: #e1e1e1;  /* Hover effect */
-  }
-  
-  .doc__nav li.selected {
-    border-left-color: green;   /* Highlight the selected item */
-    background-color: #f1f1f1;
-  }
-  
-  /* Ensure the Navbar is still horizontal */
-  nav ul.menu {
-    display: flex;                 /* Maintain the horizontal layout */
-    justify-content: flex-end;     /* Right-align */
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul.menu li {
-    margin-right: 20px;            /* Spacing between menu items */
-  }
-  
-  nav ul.menu li a {
-    text-decoration: none;
-    color: #333;                   /* Link color */
-    font-weight: bold;
-  }
-  
-  nav ul.menu li a:hover {
-    color: #000;                   /* Hover color */
-  }
-  
-  nav ul.menu li i {
-    margin-right: 8px;             /* Spacing between icon and text */
-  }
-  
-  /* Optional: Adjust wrapper for responsive layout */
+  position: sticky;    /* Keeps the sidebar sticky */
+  top: 20px;           /* Sticks 20px below the top of the viewport */
+  min-width: 200px;    /* Fixed width for the sidebar */
+  height: max-content; /* Ensures it doesn't take unnecessary height */
+  background-color: #f4f4f4; /* Sidebar background color */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* List in the Sidebar */
+.doc__nav ul {
+  list-style-type: none;  /* Removes bullets */
+  padding-left: 0;        /* Aligns with the sidebar */
+}
+
+/* Sidebar List Items */
+.doc__nav li {
+  padding: 10px 15px;     /* Adds space around the list items */
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-left: 4px solid transparent;  /* Style for selection */
+  transition: background-color 0.3s ease;
+}
+
+.doc__nav li:hover {
+  background-color: #e1e1e1;  /* Hover effect */
+}
+
+.doc__nav li.selected {
+  border-left-color: green;   /* Highlights the selected item with green */
+  background-color: #d1f0d1;  /* Light green background for the selected item */
+  color: green;               /* Changes text color to green */
+}
+
+/* Responsive Design for Navbar */
+nav ul.menu li {
+  margin-right: 20px;  /* Adds spacing between menu items */
+}
+
+nav ul.menu li a {
+  text-decoration: none;
+  color: #333;         /* Link color */
+  font-weight: bold;
+}
+
+nav ul.menu li a:hover {
+  color: #000;         /* Hover color */
+}
+
+nav ul.menu li i {
+  margin-right: 8px;   /* Spacing between icon and text */
+}
+
+/* Layout Wrapper for Content and Sidebar */
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.doc__content {
+  flex-grow: 1;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
   .wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+      flex-direction: column; /* Stacks the sidebar and content vertically */
   }
-  
-  .doc__content {
-    flex-grow: 1;
+
+  /* Make sidebar full-width on mobile */
+  .doc__nav {
+      position: relative;
+      width: 100%;    /* Full width for small screens */
+      top: 0;         /* No sticky behavior on small screens */
+      padding: 15px;  /* Adds more padding for easier clicks */
   }
-  
+
+  .doc__nav li {
+      font-size: 14px;   /* Smaller font size */
+      padding: 10px;     /* Adjusts padding */
+  }
+}
+
+/* Extra-small screens (mobile devices) */
+@media screen and (max-width: 600px) {
+  /* Collapse sidebar into a hamburger menu */
+  .doc__nav {
+      display: none;     /* Hidden by default on mobile unless toggled */
+  }
+
+  /* Hamburger menu button for mobile */
+  .hamburger-menu {
+      display: none;     /* Hidden by default */
+      background-color: green;
+      color: white;
+      padding: 10px 15px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 15px;    /* Adds space below the button */
+  }
+
+  /* Show the hamburger menu on small screens */
+  @media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: block;  /* Visible on mobile screens */
+    }
+
+    /* Adjusts the sidebar and content layout for mobile screens */
+    .wrapper {
+        flex-direction: column; /* Stacks the sidebar and content vertically */
+    }
+
+    /* Hide the sidebar by default on mobile */
+    .doc__nav {
+        display: none;     /* Hidden on mobile unless toggled */
+    }
+
+    /* Show sidebar when active (clicked on hamburger menu) */
+    .doc__nav.active {
+        display: block;    /* Sidebar is visible when the hamburger menu is clicked */
+    }
+  }
+}
+
+/* Larger screen behavior */
+@media screen and (min-width: 769px) {
+  .doc__nav {
+      display: block;     /* Sidebar is always visible on larger screens */
+  }
+
+  .hamburger-menu {
+      display: none;      /* Hide hamburger menu on larger screens */
+  }
+}
