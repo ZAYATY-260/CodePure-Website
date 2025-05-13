@@ -32,6 +32,7 @@
           <li class="js-btn">Configuration</li>
           <li class="js-btn">Keybindings</li>
           <li class="js-btn">Issues</li>
+          <li class="js-btn">Documents</li>
         </ul>
       </aside>      
       
@@ -41,10 +42,12 @@
           <h3 class="section__title">Get Started</h3>
           <p>Learn how to configure settings for CodePure, such as your syntax highlighting preference and the default saving folder location.</p>
           <h3 class="section__title">Installation</h3>
+           <p>First go to "Extensions" tab and search for " CodePure" and click "Install".</p>
+            <p>Activate it using:</p>
           <div class="code__block code__block--notabs">
             <pre class="code code--block">
               <code>
-
+                CTRL + ALT + S
               </code>
             </pre>
           </div>
@@ -55,40 +58,75 @@
           <table id="customers">
             <tr>
               <th>Options</th>
-              <th>Value</th>
+              <th>Command</th>
               <th>Default</th>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>Show specific metrics </td>
+              <td>CTRL + ALT + S</td>
+              <td>showing all metrics</td>
             </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            
           </table>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
           <hr />
         </section>
         <section class="js-section">
           <h3 class="section__title">Keybindings</h3>
-          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <ul class="keybinding__detail">
+          <h3 class="keybinding__title">Default Keybindings</h3>
+          <li> Activate <span class="keybinding__label">CTRL + SHIFT + A</span></li>
+          <li> Deactivate <span class="keybinding__label">CTRL + SHIFT + D</span></li>
+          <li> Metrics settings <span class="keybinding__label">CTRL + ALT + S</span></li>
+          <li> Analyze this specific code <span class="keybinding__label">CTRL + N </span></li>
+        </ul>
+        <ul class="keybinding__detail">
+          <h3 class="keybinding__title">Markdown Keybindings</h3>
+          <li> Start analyzing and giving predictions on your file <span class="keybinding__label">CTRL + S</span>  </li>
+        </ul>
           <hr />
         </section>
         <section class="js-section">
-          <h3 class="section__title">Issues</h3>
-          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-        </section>
+  <h3 class="section__title">Issues</h3>
+
+  <p><strong>1. The extension isn’t activating</strong><br>
+  If nothing happens when you try to activate CodePure, make sure the extension is properly installed and that your IDE is up to date. Try reloading the window or restarting the IDE. You can also check the command palette to see if “CodePure: Activate” is listed.</p>
+
+  <p><strong>2. Keyboard shortcuts aren’t working</strong><br>
+  If the keybindings like <code>Ctrl + Alt + C</code> don’t seem to do anything, they might be conflicting with other shortcuts. You can customize or check them from your IDE’s keyboard shortcuts settings.</p>
+
+  <p><strong>3. No code smells are being detected</strong><br>
+  If you're not seeing any code smell warnings even in obviously problematic code, make sure the file you’re working on is either Python or Java. Also ensure the extension is activated and the backend server is running in the background.</p>
+
+  <p><strong>4. I can’t see metrics like LOC or Cyclomatic Complexity</strong><br>
+  Metrics might not appear if the code has syntax errors or the file hasn’t been saved. Try saving the file or running the analysis manually using the command palette or shortcut.</p>
+
+  <p><strong>5. The extension feels slow on large files</strong><br>
+  If you're working with a very large file, you might notice some delay during analysis. You can switch to manual (on-demand) analysis mode to improve performance.</p>
+
+  <p>If you're still having trouble or ran into something not listed here, feel free to email us at <b><a href="mailto:codepure2025@gmail.com">codepure2025@gmail.com</a></b>. We'll get back to you as soon as we can!</p>
+</section>
+
+
+ <section class="js-section">
+  <h3 class="section__title">Documents</h3>
+  <p>All documentations we made for our project:</p>
+
+  <a href="assets/Thesis.pdf" download class="download-btn">
+    <span class="icon">📄</span>
+    <span class="text">Download our "Thesis"</span>
+  </a>
+</br>
+  <a href="assets/Code_smell_detection.pdf" download class="download-btn">
+    <span class="icon">📄</span>
+    <span class="text">Download our "Research paper"</span>
+  </a>
+</br>
+</br>
+
+</section>
+
+
+
       </article>
     </div>
     
